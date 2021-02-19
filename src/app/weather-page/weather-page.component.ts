@@ -1,6 +1,7 @@
-import { WebSeviceLocation } from './../service/webServiceLocation';
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { WebSeviceLocation } from '../service/webService';
 
 @Component({
   selector: 'app-weather-page',
@@ -26,7 +27,7 @@ export class WeatherPageComponent implements OnInit {
     this.weatherService.getWeather(formValues.location)
     .subscribe(data => {
       this.weatherData = data;
-      this.weatherData.current.temp_f = data[0].current.temperature * 2 +30;
+      this.weatherData.current.temp_f = data.current.temperature * 2 +30;
       console.log(this.weatherData)
       ;
     });
