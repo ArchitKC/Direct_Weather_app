@@ -1,0 +1,8 @@
+<div class="container">
+    <form [formGroup]='weatherForm' (ngSubmit)='onSubmit(weatherForm.value)'>
+        <div class="row">
+            <input type="text" formControlName="location" />
+        </div>
+        <div><button type="submit">Submit</button></div>
+    </form>
+</div>
